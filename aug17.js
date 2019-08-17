@@ -43,8 +43,37 @@ for(let car of cars) {
 
 // Practice: Make an array of animal objects, each with "species" and "averageLifespan" properties.  Find the lion object, both with a function, and in scope, using a for loop (do not use built-in array functions).
 
+const animals = [
+  {
+    species: 'cat',
+    lifeSpan: 18
+  },
+  {
+    species: 'dog',
+    lifeSpan: 12
+  },
+  {
+    species: 'fish',
+    lifeSpan: 2
+  },
+  {
+    species: 'lion',
+    lifeSpan: 12
+  }
+]
+const getLion = arr => {
+for(let animal of animals){
+  if(animal.species === 'lion') return animal
+}
+  return null
+}
+// console.log(getLion(animals))
 
-
+let myFavorite;
+for(let animal of animals) {
+  if(animal.species === 'lion') myFavorite = animal
+}
+// console.log(myFavorite)
 // Find the car with the highest number of miles
 
 
@@ -63,7 +92,17 @@ for(let car of cars) {
 
 
 // Practice: Find the animal with the shortest average lifespan.
+let longestLife = -1
+let currentAnimal;
 
+for(let animal of animals ){
+  if(animal.lifeSpan > longestLife ) {
+    longestLife = animal.lifeSpan
+    currentAnimal = animal
+  }
+}
+// console.log(longestLife)
+// console.log(currentAnimal)
 
 
 // Sort the array by highest miles first, using a loop (do not use built-in array sort functions).
@@ -98,8 +137,26 @@ while(cars.length > 0) {
 
 
 // Practice: Sort the animals array from shortest to longest lifespan.
+const findLongestLife = arr => {
+  let longestLife = -1
+  let animalWithLongest;
+  for(let a of arr){
+    if(a.lifeSpan > longestLife){
+      longestLife = a.lifeSpan
+      animalWithLongest = a
+    }
+  }
+  return animalWithLongest
+}
+let sortedAnimals = []
 
-
+while(animals.length > 0){
+  let maxAnimal = findLongestLife(animals)
+  sortedAnimals.unshift(maxAnimal)
+  let indexOfAnimal = animals.indexOf(maxAnimal)
+  animals.splice(indexOfAnimal, 1)
+}
+console.log(sortedAnimals)
 
 
 // Get an array of cars that have a hatchback option.
