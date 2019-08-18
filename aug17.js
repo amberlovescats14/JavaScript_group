@@ -1,4 +1,4 @@
-// View this code at: https://repl.it/@istrate
+//NOT USING ANY BUILT IN FUNCTIONS
 
 let cars = [{
   brand: 'mazda',
@@ -136,27 +136,27 @@ while(cars.length > 0) {
 // console.log(cars)
 
 
-// Practice: Sort the animals array from shortest to longest lifespan.
-const findLongestLife = arr => {
-  let longestLife = -1
-  let animalWithLongest;
-  for(let a of arr){
-    if(a.lifeSpan > longestLife){
-      longestLife = a.lifeSpan
-      animalWithLongest = a
-    }
-  }
-  return animalWithLongest
-}
-let sortedAnimals = []
+//! Practice: Sort the animals array from shortest to longest lifespan.
+// const findLongestLife = arr => {
+//   let longestLife = -1
+//   let animalWithLongest;
+//   for(let a of arr){
+//     if(a.lifeSpan > longestLife){
+//       longestLife = a.lifeSpan
+//       animalWithLongest = a
+//     }
+//   }
+//   return animalWithLongest
+// }
+// let sortedAnimals = []
 
-while(animals.length > 0){
-  let maxAnimal = findLongestLife(animals)
-  sortedAnimals.unshift(maxAnimal)
-  let indexOfAnimal = animals.indexOf(maxAnimal)
-  animals.splice(indexOfAnimal, 1)
-}
-console.log(sortedAnimals)
+// while(animals.length > 0){
+//   let maxAnimal = findLongestLife(animals)
+//   sortedAnimals.unshift(maxAnimal)
+//   let indexOfAnimal = animals.indexOf(maxAnimal)
+//   animals.splice(indexOfAnimal, 1)
+// }
+// console.log(sortedAnimals)
 
 
 // Get an array of cars that have a hatchback option.
@@ -180,4 +180,12 @@ console.log(sortedAnimals)
 // }]
 
 
-// Practice: Add a "mammal" boolean property to your animals.  Find the mammals in the array.
+//! Practice: Add a "mammal" boolean property to your animals.  Find the mammals in the array.
+
+for(let animal of animals){
+  if(animal.species == 'fish' || 
+      animal.species === 'reptile') animal.mammal = false
+  else animal.mammal = true
+}
+console.log(animals)
+
